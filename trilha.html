@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilha Avaliativa</title>
+    <link rel="stylesheet" href="style_trilha.css">
+   
+         <script>
+    // Função para calcular pontos dentro dos dialogs
+    function calcularPontosEspecificos() {
+     
+    }
+
+    // Função para abrir dialogs
+    function abrirDialog(id) {
+      document.getElementById(id).showModal(); // Abre o dialog
+    }
+
+    // Função para fechar dialogs
+    function fecharDialog(id) {
+      document.getElementById(id).close(); 
+      const dialogs = document.querySelectorAll('dialog.calcular'); // Seleciona apenas dialogs específicos
+      let totalPontos = 0;
+
+      dialogs.forEach((dialog) => {
+        const respostaSelecionada = dialog.querySelector('input[type="radio"]:checked'); // Busca resposta marcada
+        if (respostaSelecionada) {
+          if (respostaSelecionada.value === "sim") {
+            totalPontos += 10;
+          } else if (respostaSelecionada.value === "parcial") {
+            totalPontos += 5;
+          }
+        }
+      });
+
+      // Exibe o total de pontos no resultado
+      document.getElementById('resultado').innerText = `Total de pontos: 
+      ${totalPontos}`;// Fecha o dialog
+    }
+  </script>
+    
+       
+    
+    
+    
+    
+</head>
+<body>
+     <div   class="tabela">
+        <div   class="contene">
+            
+            
+            <div   class="Partida" ><p >PARTIDA</p> </div>
+            
+            <button onclick="abrirDialog('dialog1')" id="item1"><div  class="modal calcular"><H1>1</H1> <p >ALINHAMENTO PEDAGOGICO</P>
+                </div>
+            </button> 
+            <dialog  id="dialog1">
+                <h2>ALINHAMENTO PEDAGOGICO</h2> <br>
+                <p >Caro(a) avaliador(a),Neste percurso você irá avaliar as atividades relacionando-as aos conceitos de alfabetização e letramento, ou seja, analisar se o recurso educacional digital explora o conhecimento do sistema de escrita alfabética, promovendo o desenvolvimento das habilidades de codificação e decodificação da linguagem escrita em contextos reais do uso, explorando a compreensão leitora, produção de textos, pensamento crítico, uso funcional da escrita e diversidade de gêneros. Verificar também se a ferramenta está alinhada com a BNCC para o contexto em estudo. <br> <br> Clique em <a href="http://www.scielo.br/j/rbedu/a/89tX3SGw5G4dNWdHRkRxrZk/?format=pdf&lang=pt" target="_blank">SAIBA MAIS</a> para ficar por dentro de discussões teóricas a respeito desta abordagem. </p>
+                
+                <button onclick="fecharDialog('dialog1')"  id="salvar">Sair</button>
+            </dialog>       
+           
+            <button onclick="abrirDialog('dialog2')" id="item2">
+                <div  class="modal calcular"> <H1>?</H1> <p >CONHECIMENTO DO ALFABETO</P></div></button>
+            <dialog class="calcular" id="dialog2"><h2>Questão 1</h2> <br>
+                <p  class="quest">O RED explora o conhecimento do alfabeto, por meio de atividades que estimulam o reconhecimento das letras e suas relações entre letras e sons?</P>
+
+                <input type="radio" name="dialog2" value="sim"> sim
+                <input type="radio" name="dialog2" value="parcial"> Parcialmente
+                <input type="radio" name="dialog2" > não
+                <button onclick="fecharDialog('dialog2')"  id="salvar">Salvar</button>
+            </dialog>
+
+            
+            
+
+            <button onclick="abrirDialog('dialog3')" id="item3">
+                <div  class="modal calcular"> <H1>?</H1><p >APROPRIAÇÃO DO SEA</P></div></button>
+            <dialog class="calcular" id="dialog3">
+                <h2 >Questão 2</h2 > <br>
+                <p  class="quest">O RED explora o conhecimento do alfabeto, por meio de atividades que estimulam o reconhecimento das letras e suas relações entre letras e sons?</P>
+
+                <input type="radio" name="dialog3" value="sim"> sim
+                <input type="radio" name="dialog3" value="parcial"> Parcialmente
+                <input type="radio" name="dialog3" id="não"> não
+                <button onclick="fecharDialog('dialog3')"  id="salvar">Salvar</button>
+            </dialog>             
+            
+            <button onclick="abrirDialog('dialog4')" id="item4">
+                <div> <H1>2</H1> <p >USABILIDADE</P></div></button>
+            <dialog class="calcular" id="dialog4">
+                <h2 >USABILIDADE</h2 > <br>
+                <p  class="quest">Caro (a) avaliador (a), Você chegou na segunda etapa do percurso! Fique atento para percorrer um novo caminho. Seu desafio será analisar a qualidade tecnológica dos Recursos Educacionais Digitais. Clique em <a href="http://cieb.net.br/wp-content/uploads/2020/08/CIEB-Notas-Tecnicas-5-Orientacoes-para-Selecao-e-Avaliacao-de-Conteudos-e-Recursos-Digitais-2019_v_CC.pdf" target="_blank">SAIBA MAIS</a> para ficar por dentro de discussões teóricas a respeito desta abordagem.</P>               
+                <button onclick="fecharDialog('dialog4')"  id="salvar">Sair</button>
+            </dialog>
+
+            <button onclick="abrirDialog('dialog5')" id="item5">
+                <div  class="modal calcular"> <H1>?</H1> <p >INTERFACE</P></div></button>
+            <dialog class="calcular" id="dialog5">
+                <h2 >Questão 11</h2 ><br>
+                <p  class="quest">O design da interface é simples e adequado para crianças em fase de alfabetização?</P>
+
+                <input type="radio" name="dialog5" value="sim"> sim
+                <input type="radio" name="dialog5" value="parcial"> Parcialmente
+                <input type="radio" name="dialog5" id="não"> não
+                <button onclick="fecharDialog('dialog5')"  id="salvar">Salvar</button>
+            </dialog>
+                       
+
+            <button onclick="abrirDialog('dialog6')" id="item6">
+                <div  class="modal calcular"> <H1>?</H1> <p >CONTEXT0 DO USO DA LINGUAGEM</P></div></button>
+            <dialog class="calcular" id="dialog6">
+                <h2 >Questão 3</h2 ><br>
+                <p  class="quest">As atividades propostas proporcionam a contextualização do uso da linguagem escrita, desenvolvimento da compreensão leitora, produção de textos e incentivo ao pensamento crítico?</P>
+
+                <input type="radio" name="dialog6" value="sim"> sim
+                <input type="radio" name="dialog6" value="parcial"> Parcialmente
+                <input type="radio" name="dialog6" id="não"> não
+                <button onclick="fecharDialog('dialog6')"  id="salvar">Salvar</button>
+            </dialog>            
+
+            <button onclick="abrirDialog('dialog7')" id="item7">
+                <div  class="modal calcular"> <H1>?</H1> <p >BNCC</P></div></button>
+            <dialog class="calcular" id="dialog7">
+                <h2 >Questão 10</h2 ><br>
+                <p  class="quest">O RED promove a integração entre alfabetização e letramento, indo além da codificação/decodificação para possibilitar práticas reais de uso da linguagem escrita, conforme orienta a BNCC? Assinale os eixos que são explorados nas atividade</P>
+
+                <input type="radio" name="dialog7" value="sim"> sim
+                <input type="radio" name="dialog7" value="parcial"> Parcialmente
+                <input type="radio" name="dialog7" id="não"> não <br>
+
+                <input type="checkbox" name="Análise" id="Análise"> Análise linguística <br>
+                <input type="checkbox" name="Leitura" id="Leitura"> Leitura <br>
+                <input type="checkbox" name="Oralidade" id="Oralidade"> Oralidade <br>
+                <input type="checkbox" name="Produção" id="Produção"> Produção de textos 
+                <button onclick="fecharDialog('dialog7')"  id="salvar">Salvar</button>
+            </dialog>
+             
+            <button onclick="abrirDialog('dialog8')" id="item8">
+                <div  class="modal calcular"> <H1>?</H1> <p >NAVEGAÇÃO</P></div></button>
+            <dialog class="calcular" id="dialog8">
+                <h2 >Questão 12</h2 ><br>
+                <p  class="quest"> A navegação entre as funcionalidades do software é fácil e acessível?</P>
+
+                <input type="radio" name="dialog8" value="sim"> sim
+                <input type="radio" name="dialog8" value="parcial"> Parcialmente
+                <input type="radio" name="dialog8" id="não"> não
+                <button onclick="fecharDialog('dialog8')"  id="salvar">Salvar</button>
+            </dialog>
+            
+            <button onclick="abrirDialog('dialog9')" id="item9">
+                <div  class="modal calcular"> <H1>?</H1> <p >SUPORTE NEE INTELECTUAL</P></div></button>
+            <dialog class="calcular" id="dialog9">
+                <h2 >Questão 22</h2 ><br>
+                <p  class="quest"> O RED oferece suporte para as crianças com deficiência intelectual (clareza nas explicações, passo a passo, elementos visuais, etc)?</P>
+
+                <input type="radio" name="dialog9" value="sim"> sim
+                <input type="radio" name="dialog9" value="parcial"> Parcialmente
+                <input type="radio" name="dialog9" id="não"> não
+                <button onclick="fecharDialog('dialog9')"  id="salvar">Salvar</button>
+            </dialog>
+            
+            <button onclick="abrirDialog('dialog10')" id="item10">
+                <div> <H1>4</H1> <p >INTERATIVIDADE</P></div></button>
+            <dialog class="calcular" id="dialog10">
+                <h2 >INTERATIVIDADE</h2 ><br>
+                <p  class="quest"> Você já percorreu um longo caminho. Falta pouco para a chegada. Antes de concluir o trajeto verifique as possibilidades de interação entre as ferramentas e os usuários. Clique em <a href="https://seer.ufrgs.br/index.php/cadernosdeinformatica/article/view/v6n1p297-300/11821" target="_blank">SAIBA MAIS</a> para ficar por dentro de discussões teóricas a respeito desta abordagem.</P>
+
+                <button onclick="fecharDialog('dialog10')"  id="salvar">Salvar</button>
+            </dialog>
+            
+            
+            <button onclick="abrirDialog('dialog11')" id="item11">
+                <div  class="modal calcular"> <H1>?</H1> <p >COMPREENSÃO LEITURA</P></div></button>
+            <dialog class="calcular" id="dialog11">
+                <h2 >Questão 4</h2 ><br>
+                <p  class="quest">O RED oferece atividades que incentivam a compreensão profunda dos textos, como perguntas inferenciais, interpretação de ideias principais e a localização de informações implícitas e explícitas?</P>
+
+                <input type="radio" name="dialog11" value="sim"> sim
+                <input type="radio" name="dialog11" value="parcial"> Parcialmente
+                <input type="radio" name="dialog11" id="não"> não
+                <button onclick="fecharDialog('dialog11')"  id="salvar">Salvar</button>
+            </dialog> 
+
+             
+            <button onclick="abrirDialog('dialog12')" id="item12">
+                <div  class="modal calcular"> <H1>?</H1> <p >INTERDISCI - PLINARIDADE</P></div></button>
+            <dialog class="calcular" id="dialog12">
+                <h2 >Questão 9</h2 ><br>
+                <p  class="quest">O RED integra conhecimentos de diferentes áreas (como matemática, ciências, história e artes), incentivando o aluno a aplicar a leitura e a escrita em contextos variados e a fazer conexões entre as disciplinas?</P>
+
+                <input type="radio" name="dialog12" value="sim"> sim
+                <input type="radio" name="dialog12" value="parcial"> Parcialmente
+                <input type="radio" name="dialog12" id="não"> não
+                <button onclick="fecharDialog('dialog12')"  id="salvar">Salvar</button>
+            </dialog> 
+             
+            <button onclick="abrirDialog('dialog13')" id="item13">
+                <div  class="modal calcular"> <H1>?</H1> <p >FEEDBACK</P></div></button>
+            <dialog class="calcular" id="dialog13">
+                <h2 >Questão 13</h2 ><br>
+                <p  class="quest"> Oferece feedback imediato as crianças de forma clara?</P>
+
+                <input type="radio" name="dialog13" value="sim"> sim
+                <input type="radio" name="dialog13" value="parcial"> Parcialmente
+                <input type="radio" name="dialog13" id="não"> não
+                <button onclick="fecharDialog('dialog13')"  id="salvar">Salvar</button>
+            </dialog>
+             
+            <button onclick="abrirDialog('dialog14')" id="item14">
+                <div  class="modal calcular"> <H1>?</H1> <p >SUPORTE NEE MOTORA</P></div></button>
+            <dialog class="calcular" id="dialog14">
+                <h2 >Questão 21</h2 ><br>
+                <p  class="quest"> O RED oferece suporte para as crianças com deficiência motora (teclados adaptados, mouse controlados, comando de voz, entre outros), simplificando os movimentos e velocidade para que as crianças com limitações motoras consigam participar tranquilamente?</P>
+
+                <input type="radio" name="dialog14" value="sim"> sim
+                <input type="radio" name="dialog14" value="parcial"> Parcialmente
+                <input type="radio" name="dialog14" id="não"> não
+                <button onclick="fecharDialog('dialog14')"  id="salvar">Salvar</button>
+            </dialog>
+            
+            <button onclick="abrirDialog('dialog15')" id="item15">
+                <div  class="modal calcular"> <H1>?</H1> <p >INTERAÇÃO COM O CONTEUDO</P></div></button>
+            <dialog class="calcular" id="dialog15">
+                <h2 >Questão 23</h2 ><br>
+                <p  class="quest"> O RED oferece oportunidades claras de interação da criança com o conteúdo, como cliques, arrasto de elementos, respostas a perguntas e ações em tempo real?</P>
+
+                <input type="radio" name="dialog15" value="sim"> sim
+                <input type="radio" name="dialog15" value="parcial"> Parcialmente
+                <input type="radio" name="dialog15" id="não"> não
+                <button onclick="fecharDialog('dialog15')"  id="salvar">Salvar</button>
+            </dialog>
+
+            
+
+            <button onclick="abrirDialog('dialog16')" id="item16">
+                <div  class="modal calcular"> <H1>?</H1> <p >INTERAÇÃO TEXTUAL</P></div></button>
+            <dialog class="calcular" id="dialog16">
+                <h2 >Questão 5</h2 ><br>
+                <p  class="quest">Há atividades no RED que oportunizam a produção de textos de forma autônoma, permitindo a criação de diferentes tipos de textos (narrativos, descritivos, argumentativos, etc.), com apoio e orientações adequadas?</P>
+
+                <input type="radio" name="dialog16" value="sim"> sim
+                <input type="radio" name="dialog16" value="parcial"> Parcialmente
+                <input type="radio" name="dialog16" id="não"> não
+                <button onclick="fecharDialog('dialog16')"  id="salvar">Salvar</button>
+            </dialog> 
+
+              
+            <button onclick="abrirDialog('dialog17')" id="item17">
+                <div  class="modal calcular"> <H1>?</H1> <p >DIVERCIDADE DE GENEROS TEXTUAIS</P></div></button>
+            <dialog class="calcular" id="dialog17">
+                <h2 >Questão 8</h2 ><br>
+                <p  class="quest">O RED apresenta uma diversidade de gêneros textuais (contos, cartas, notícias, receitas, poemas, etc.) que incentivem o aluno a explorar diferentes formas e funções de textos na comunicação escrita?</P>
+
+                <input type="radio" name="dialog17" value="sim"> sim
+                <input type="radio" name="dialog17" value="parcial"> Parcialmente
+                <input type="radio" name="dialog17" id="não"> não
+                <button onclick="fecharDialog('dialog17')"  id="salvar">Salvar</button>
+            </dialog>
+             
+            <button onclick="abrirDialog('dialog18')" id="item18">
+                <div  class="modal calcular"><H1>?</H1> <p >INSTRUÇÕES</P></div></button>
+            <dialog class="calcular" id="dialog18">
+                <h2 >Questão 14</h2 ><br>
+                <p  class="quest">As instruções para uso do RED e das atividades são claras e de fácil compreensão?</P>
+
+                <input type="radio" name="dialog18" value="sim"> sim
+                <input type="radio" name="dialog18" value="parcial"> Parcialmente
+                <input type="radio" name="dialog18" id="não"> não
+                <button onclick="fecharDialog('dialog18')"  id="salvar">Salvar</button>
+            </dialog>
+              
+            <button onclick="abrirDialog('dialog19')" id="item19">
+                <div  class="modal calcular"><H1>?</H1> <p >SUPORTE NEE AUDITIVO</P></div></button>
+            <dialog class="calcular" id="dialog19">
+                <h2 >Questão 20</h2 ><br>
+                <p  class="quest">O RED oferece suporte para as crianças com deficiência auditiva (oferece legendas, transcrições e alternativas visuais para vídeos e áudios, libras, etc)?</P>
+
+                <input type="radio" name="dialog19" value="sim"> sim
+                <input type="radio" name="dialog19" value="parcial"> Parcialmente
+                <input type="radio" name="dialog19" id="não"> não
+                <button onclick="fecharDialog('dialog19')"  id="salvar">Salvar</button>
+            </dialog>
+
+            <button onclick="abrirDialog('dialog20')" id="item20">
+                <div  class="modal calcular"><H1>?</H1> <p >INTERAÇÃO ENTRE CRIANÇAS</P></div></button>
+            <dialog class="calcular" id="dialog20">
+                <h2 >Questão 24</h2 ><br>
+                <p  class="quest">O RED possibilita a interação entre criança e criança?</P>
+
+                <input type="radio" name="dialog20" value="sim"> sim
+                <input type="radio" name="dialog20" value="parcial"> Parcialmente
+                <input type="radio" name="dialog20" id="não"> não
+                <button onclick="fecharDialog('dialog20')"  id="salvar">Salvar</button>
+            </dialog>
+            
+
+            <button onclick="abrirDialog('dialog21')" id="item21">
+                <div  class="modal calcular"><H1>?</H1> <p >CRIATIVIDADE</P></div></button>
+            <dialog class="calcular" id="dialog21">
+                <h2 >Questão 30</h2 ><br>
+                <p  class="quest">As atividades permitem às crianças explorarem sua criatividade, propondo a criação de textos, vídeos, desenhos, personagens, cenários, entre outros de sua autoria? </P>
+
+                <input type="radio" name="dialog21" value="sim"> sim
+                <input type="radio" name="dialog21" value="parcial"> Parcialmente
+                <input type="radio" name="dialog21" id="não"> não
+                <button onclick="fecharDialog('dialog21')"  id="salvar">Salvar</button>
+            </dialog>
+
+            
+
+            
+
+            <div  class="modal calcular"  id="fim" > <H1>FIM</H1>  </div>
+
+            <div id="resultado" style=" font-weight: bold;"><p>Total de pontos:</p></div>
+            
+
+
+            <button onclick="abrirDialog('dialog23')" id="item23">
+                <div  class="modal calcular"> <H1>?</H1> <p >PROTAGONISMO ESTUDANTE</P></div></button>
+            <dialog class="calcular" id="dialog23">
+                <h2 >Questão 6</h2 ><br>
+                <p  class="quest">As atividades propostas no RED possibilitam a criança ser protagonista no processo educativo?</P>
+
+                <input type="radio" name="dialog23" value="sim"> sim
+                <input type="radio" name="dialog23" value="parcial"> Parcialmente
+                <input type="radio" name="dialog23" id="não"> não
+                <button onclick="fecharDialog('dialog23')"  id="salvar">Salvar</button>
+            </dialog> 
+
+            <button onclick="abrirDialog('dialog24')" id="item24">
+                <div  class="modal calcular"> <H1>?</H1> <p >USO FUNDAMENTAL DA ORALIDADE</P></div></button>
+            <dialog class="calcular" id="dialog24">
+                <h2 >Questão 7</h2 ><br>
+                <p  class="quest"> O RED propicia atividades que estimulam a produção e a compreensão oral, incentivando os alunos a interagir, argumentar e se expressar verbalmente em diferentes contexto?</P>
+
+                <input type="radio" name="dialog24" value="sim"> sim
+                <input type="radio" name="dialog24" value="parcial"> Parcialmente
+                <input type="radio" name="dialog24" id="não"> não
+                <button onclick="fecharDialog('dialog24')"  id="salvar">Salvar</button>
+            </dialog>
+
+            <button onclick="abrirDialog('dialog25')" id="item25">
+                <div  class="modal calcular"> <H1>?</H1> <p >CCOMPATI - BILIDADE</P></div></button>
+            <dialog class="calcular" id="dialog25">
+                <h2 >Questão 15</h2 ><br>
+                <p  class="quest">É compatível com diferentes dispositivos (computadores, smartphones, tablets, etc.)?</P>
+
+                <input type="radio" name="dialog25" value="sim"> sim
+                <input type="radio" name="dialog25" value="parcial"> Parcialmente
+                <input type="radio" name="dialog25" id="não"> não
+                <button onclick="fecharDialog('dialog25')"  id="salvar">Salvar</button>
+            </dialog>    
+            
+            <button onclick="abrirDialog('dialog26')" id="item26">
+                <div  class="modal calcular"> <H1>?</H1> <p >SUPORTE NEE ACESSIBILIDADE</P></div></button>
+            <dialog class="calcular" id="dialog26">
+                <h2 >Questão 19</h2 ><br>
+                <p  class="quest">O RED oferece recursos off-line ou alternativas acessíveis para garantir o aprendizado contínuo?</P>
+
+                <input type="radio" name="dialog26" value="sim"> sim
+                <input type="radio" name="dialog26" value="parcial"> Parcialmente
+                <input type="radio" name="dialog26" id="não"> não
+                <button onclick="fecharDialog('dialog26')"  id="salvar">Salvar</button>
+            </dialog>  
+
+            <button onclick="abrirDialog('dialog27')" id="item27">
+                <div  class="modal calcular"> <H1>?</H1> <p >AMBIENTES COLABORATIVOS</P></button>
+            <dialog class="calcular" id="dialog27">
+                <h2 >Questão 25</h2 ><br>
+                <p  class="quest">O RED oferece recursos off-line ou alternativas acessíveis para garantir o aprendizado contínuo?</P>
+
+                <input type="radio" name="dialog27" value="sim"> sim
+                <input type="radio" name="dialog27" value="parcial"> Parcialmente
+                <input type="radio" name="dialog27" id="não"> não
+                <button onclick="fecharDialog('dialog27')"  id="salvar">Salvar</button>
+            </dialog> 
+
+            <button onclick="abrirDialog('dialog28')" id="item28">
+                <div  class="modal calcular"> <H1>?</H1> <p >TOMADA DE DECISÃO</P></button>
+            <dialog class="calcular" id="dialog28">
+                <h2 >Questão 29</h2 ><br>
+                <p  class="quest"> As atividades desafiam as crianças a tomarem decisões refletindo nas implicações das escolhas?</P>
+
+                <input type="radio" name="dialog28" value="sim"> sim
+                <input type="radio" name="dialog28" value="parcial"> Parcialmente
+                <input type="radio" name="dialog28" id="não"> não
+                <button onclick="fecharDialog('dialog28')"  id="salvar">Salvar</button>
+            </dialog>
+
+            
+
+             <button onclick="abrirDialog('dialog29')" id="item29">
+                <div  class="modal calcular"> <H1>?</H1> <p >EMGAJAMENTO</P></div></button>
+             <dialog class="calcular" id="dialog29">
+                <h2 >Questão 16</h2 ><br>
+                <p  class="quest">Utiliza elementos que motivam as crianças, como pontuações, recompensas, conquistas?</P>
+
+                <input type="radio" name="dialog29" value="sim"> sim
+                <input type="radio" name="dialog29" value="parcial"> Parcialmente
+                <input type="radio" name="dialog29" id="não"> não
+                <button onclick="fecharDialog('dialog29')"  id="salvar">Salvar</button>
+             </dialog>   
+
+             <button onclick="abrirDialog('dialog30')" id="item30">
+                <div  class="modal calcular"> <H1>?</H1> <p >TECNOLOGIAS ASSISTIVAS</P></div></button>
+             <dialog class="calcular" id="dialog30">
+                <h2 >Questão 18</h2 ><br>
+                <p  class="quest">O RED oferece suporte utilizando tecnologias assistivas (ex.: legendas, leitores de tela, ajustes visuais) que permitem a inclusão de crianças com necessidades especiais?</P>
+
+                <input type="radio" name="dialog30" value="sim"> sim
+                <input type="radio" name="dialog30" value="parcial"> Parcialmente
+                <input type="radio" name="dialog30" id="não"> não
+                <button onclick="fecharDialog('dialog30')"  id="salvar">Salvar</button>
+             </dialog>
+
+             <button onclick="abrirDialog('dialog31')" id="item31">
+                <div  class="modal calcular"> <H1>?</H1> <p >MÍDIAS</P></div></button>
+             <dialog class="calcular" id="dialog31">
+                <h2 >Questão 26</h2 ><br>
+                <p  class="quest">O  RED possibilitar interagir com o conteúdo de forma dinâmica, utilizando diferentes tipos de mídia (vídeos, jogos, quizzes, etc.)?</P>
+
+                <input type="radio" name="dialog31" value="sim"> sim
+                <input type="radio" name="dialog31" value="parcial"> Parcialmente
+                <input type="radio" name="dialog31" id="não"> não
+                <button onclick="fecharDialog('dialog31')"  id="salvar">Salvar</button>
+             </dialog>
+
+             <button onclick="abrirDialog('dialog32')" id="item32">
+                <div  class="modal calcular"> <H1>?</H1> <p >EMPATIA</P></div></button>
+             <dialog class="calcular" id="dialog32">
+                <h2 >Questão 28</h2 ><br>
+                <p  class="quest">Possibilita situações que a criança se coloque no lugar do outro empatia?</P>
+
+                <input type="radio" name="dialog32" value="sim"> sim
+                <input type="radio" name="dialog32" value="parcial"> Parcialmente
+                <input type="radio" name="dialog32" id="não"> não
+                <button onclick="fecharDialog('dialog32')"  id="salvar">Salvar</button>
+             </dialog>
+
+            
+
+            
+            <button onclick="abrirDialog('dialog33')" id="item33">
+                <div  class="modal calcular"> <H1>?</H1><p >SUPORTE TÉCNICO</P></div></button>
+            <dialog class="calcular" id="dialog33">
+                <h2 >Questão 17</h2 ><br>
+                <p  class="quest">O RED oferece suporte técnico (como tutoriais, perguntas frequentes ou atendimento ao usuário) para solucionar eventuais problemas durante o uso?</P>
+
+                <input type="radio" name="dialog33" value="sim"> sim
+                <input type="radio" name="dialog33" value="parcial"> Parcialmente
+                <input type="radio" name="dialog33" id="não"> não
+                <button onclick="fecharDialog('dialog33')"  id="salvar">Salvar</button>
+            </dialog>  
+
+            
+            <button onclick="abrirDialog('dialog34')" id="item34">
+                <div > <H1>3</H1><p >ACESSIBILIDADE</div></button>
+            <dialog class="calcular" id="dialog34">
+                <h2 >ACESSIBILIDADE</h2 ><br>
+                <p  class="quest">Chegou a hora de analisar se o recurso oferece tecnologias assistivas aos estudantes NEE. É importante refletir as possibilidades que o REDs pode garantir ou não, a todas as pessoas. <br> <br> Clique em <a href="http://professor.escoladigital.pr.gov.br/tecnologias_assistivas" target="_blank">SAIBA MAIS</a> para ficar por dentro de discussões teóricas a respeito desta abordagem. </P>
+               
+                <button onclick="fecharDialog('dialog34')"  id="salvar">Salvar</button>
+            </dialog>
+            
+            <button onclick="abrirDialog('dialog35')" id="item35">
+                <div  class="modal calcular"> <H1>5</H1><p >HABILIDADES SOCIOEMO-CIONAIS</div></button>
+            <dialog class="calcular" id="dialog35">
+                <h2 >ACESSIBILIDADE</h2 ><br>
+                <p  class="quest">Parabéns! Você está a poucos passos da grande chegada. Para finalizar o percurso avalie se os REDs favorecem o desenvolvimento de habilidades socioemocionais para a formação integral dos estudantes. <br> <br>Clique em SAIBA MAIS para ficar por dentro de discussões teóricas a respeito desta abordagem. </P>
+               
+                <button onclick="fecharDialog('dialog35')"  id="salvar">Salvar</button>
+            </dialog>
+
+            
+            <button onclick="abrirDialog('dialog36')" id="item36">
+                <div  class="modal calcular"> <H1>?</H1><p >CONSCIÊCIA SOCIAL</P></div></button>
+            <dialog class="calcular" id="dialog36">
+                <h2 >Questão 27</h2 ><br>
+                <p  class="quest">Favorece o desenvolvimento da consciência social?</P>
+
+                <input type="radio" name="dialog36" value="sim"> sim
+                <input type="radio" name="dialog36" value="parcial"> Parcialmente
+                <input type="radio" name="dialog36" id="não"> não
+                <button onclick="fecharDialog('dialog36')"  id="salvar">Salvar</button>
+            </dialog>
+            
+               
+         </div>
+    </div>
+    
+   
+</body>
+
+
+</html>
